@@ -1,8 +1,8 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+local configs = require('lspconfig/configs')
 lspconfig.pyright.setup {}
 lspconfig.cmake.setup{}
-lspconfig.emmet_ls.setup{}
 lspconfig.tsserver.setup {}
 lspconfig.clangd.setup{}
 lspconfig.rust_analyzer.setup{
@@ -23,9 +23,26 @@ lspconfig.html.setup {
   capabilities = capabilities,
 }
 
+lspconfig.cssls.setup{
+    capabilities = capabilities,
+}
+
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<space>d', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)

@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
         end
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp

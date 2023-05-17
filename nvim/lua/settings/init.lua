@@ -26,5 +26,7 @@ set.cursorline = true
 set.autoread = true
 
 set.showcmd = true
+set.smartindent = true
+set.autoindent = true
 
 vim.notify = require("notify") -- configuration for notifications
