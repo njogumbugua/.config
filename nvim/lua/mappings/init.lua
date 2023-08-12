@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' ' 
+vim.g.maplocalleader = ' '
 
 -- Treesitter mappings
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true })
@@ -34,4 +34,5 @@ vim.keymap.set("n", "<leader>nq", "<cmd>TroubleToggle quickfix<cr>",
 vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
-
+-- Lazy git mappings
+vim.keymap.set("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})

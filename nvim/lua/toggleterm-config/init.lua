@@ -6,7 +6,10 @@ require("toggleterm").setup{
    -- Change the default shell. Can be a string or a function returning a string
     shell = vim.o.shell,
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
-    direction = 'horizontal'
+    direction = 'float',
+    shade_terminals = true,
+    shading_factor = '1',
+    shade_filetypes = {}
 }
 
 function _G.set_terminal_keymaps()
@@ -21,3 +24,12 @@ end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+
+function _LAZYGIT_TOGGLE()
+  lazygit:toggle()
+end
+
+--vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
