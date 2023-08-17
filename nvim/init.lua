@@ -14,6 +14,5 @@ require('settings')
 require('autoclose-config')
 
 require('toggleterm-config')
-
 require('indent-blankline-config')
-          
+require('nvim-dap')

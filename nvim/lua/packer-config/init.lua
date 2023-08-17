@@ -3,8 +3,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'EdenEast/nightfox.nvim' -- Nightfox colorscheme
   use 'nvim-tree/nvim-tree.lua'
-  use 'rcarriga/nvim-notify' 
-  
+  use 'rcarriga/nvim-notify'
+
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'nvim-tree/nvim-web-devicons'
   use 'romgrk/barbar.nvim'
@@ -29,10 +29,13 @@ return require('packer').startup(function(use)
   use 'm4xshen/autoclose.nvim'
   use 'folke/trouble.nvim' -- Diagnostics plugin
   use 'onsails/lspkind.nvim'
-  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-dap' --Debugger
+  use 'theHamsta/nvim-dap-virtual-text'
 
   use 'rcarriga/nvim-dap-ui'
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+
   require("toggleterm").setup()
 end}
+
 end)

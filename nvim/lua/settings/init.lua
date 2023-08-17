@@ -28,5 +28,6 @@ set.autoread = true
 set.showcmd = true
 set.smartindent = true
 set.autoindent = true
+set.modifiable = true
 
 vim.notify = require("notify") -- configuration for notifications
