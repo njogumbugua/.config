@@ -24,6 +24,10 @@ return {
   {
     "smjonas/inc-rename.nvim",
     cmd = "IncRename",
+	init = function()
+		local rename = require("inc_rename")
+		rename.setup()
+	end
     keys = { { "n", "<leader>tn", ":IncRename " } },
   },
 
