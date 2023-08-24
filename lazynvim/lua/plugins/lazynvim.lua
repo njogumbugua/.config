@@ -129,4 +129,16 @@ return {
     "theHamsta/nvim-dap-virtual-text",
     opts = {},
   },
+
+   {
+       'numToStr/Comment.nvim',
+           opts = {
+                   -- add any options here
+                       },
+					   init = function()
+					   local comment = require("Comment")
+					   comment.setup()
+					   end,
+                           lazy = false,
+     }
 }
