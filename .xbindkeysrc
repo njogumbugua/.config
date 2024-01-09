@@ -60,9 +60,21 @@
 
 "xrandr --output HDMI-1-1 --on"
     Mod4 + p
-    
+ 
 "power-menu.zsh"
     Mod4 + x
+
+# increase volume using media key
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+    Vol+
+
+# decrease volume using media key
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    Vol-
+
+# mute using media key
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    Mute
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
 #
